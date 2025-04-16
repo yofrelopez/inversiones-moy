@@ -5,6 +5,21 @@
   --foreground: #171717;
 }
 
+@theme {
+  --color-moyblue: #01219C;
+  --color-moyblue-90:  #01219CE6;
+  --color-moyblue-80:  #01219CCC;
+  --color-moyblue-70:  #01219CB3;
+  --color-moyblue-60:  #01219C99;
+  --color-moyblue-50:  #01219C80;
+  --color-moyblue-40:  #01219C66;
+  --color-moyblue-30:  #01219C4D;
+  --color-moyblue-20:  #01219C33;
+  --color-moyblue-10:  #01219C1A;
+  --color-moyblue-5:   #01219C0D;
+  --color-moyblue-0:   #01219C00;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
