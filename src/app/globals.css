@@ -1,0 +1,77 @@
+/* globals.css */
+
+/* ─── 1. IMPORT DE TAILWIND ─────────────────────────────────────────── */
+@import "tailwindcss";
+
+/* ─── 2. IMPORT DE NUNITO SANS ─────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap');
+
+/* ─── 3. VARIABLES CSS ──────────────────────────────────────────────── */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  --color-moyblue:    #01219C;
+  --color-moyblue-90: #01219CE6;
+  --color-moyblue-80: #01219CCC;
+  --color-moyblue-70: #01219CB3;
+  --color-moyblue-60: #01219C99;
+  --color-moyblue-50: #01219C80;
+  --color-moyblue-40: #01219C66;
+  --color-moyblue-30: #01219C4D;
+  --color-moyblue-20: #01219C33;
+  --color-moyblue-10: #01219C1A;
+  --color-moyblue-5:  #01219C0D;
+  --color-moyblue-0:  #01219C00;
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* ─── 4. ESTILOS GLOBALES EN BODY ──────────────────────────────────── */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color:      var(--foreground);
+  font-family: 'Nunito Sans', sans-serif;  /* ⬅️ Aquí reemplazamos Arial por Nunito */
+}
+
+/* ─── 5. UTILIDADES TIPOGRÁFICAS ──────────────────────────────────── */
+@layer utilities {
+  /* Encabezados */
+  .heading-1 {
+    @apply text-5xl font-extrabold leading-tight;
+  }
+  .heading-2 {
+    @apply text-4xl font-bold leading-snug;
+  }
+  .heading-3 {
+    @apply text-3xl font-semibold leading-normal;
+  }
+
+  /* Subtítulos */
+  .subtitle {
+    @apply text-xl font-medium;
+    color: var(--color-moyblue-80);
+  }
+
+  /* Párrafos */
+  .body {
+    @apply text-base leading-relaxed;
+  }
+
+  /* Texto pequeño */
+  .small {
+    @apply text-sm leading-snug text-gray-600;
+  }
+}
