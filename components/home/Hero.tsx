@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-moyblue via-moyblue-40 to-moyblue-40 z-0" />
 
       {/* Contenido centrado */}
-      <div className="relative z-10 text-center px-6 text-white max-w-2xl">
+      <div className="relative z-10 text-center px-6 text-white max-w-2xl mt-[-50px]">
         <p className="text-sm text-yellow-400 font-semibold mb-4 tracking-wider">
           TRASLADA TUS ENSERES CON
         </p>
