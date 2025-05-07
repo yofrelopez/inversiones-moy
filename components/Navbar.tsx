@@ -27,7 +27,7 @@ export default function Navbar() {
 
 
          {/* Logo */}
-         <div className="relative h-[40px] w-[152px] md:h-[60px] lg:h-[90px]">
+         <div className="relative h-[100px] w-[120px] md:h-[140px] lg:h-[140px] lg:w-[192px]">
           <Image
             src="/logo-moy.png"
             alt="Logo"
@@ -48,13 +48,13 @@ export default function Navbar() {
         </button>
 
         {/* Navegación en escritorio */}
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden md:flex space-x-12">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`hover:underline ${
-                pathname === item.href ? 'border-b-2 border-yellow-400' : ''
+              className={`hover:cursor ${
+                pathname === item.href ? 'border-b-2 border-yellow-400 pb-4' : ''
               }`}
             >
               {item.label}
