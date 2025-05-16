@@ -10,11 +10,18 @@ export default function Page() {
 
     return (
         <>
+
             <EncabezadoServicios /> 
+
             <PorqueNosotros /> 
+
+            
+            
+
             <ContactoCliente />
             <MasServicios_1 />
             <MasServicios_2 />
+
   
         </>
     )
