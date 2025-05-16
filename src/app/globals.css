@@ -53,21 +53,25 @@ body {
     @apply text-5xl font-bold leading-tight;
   }
   .heading-2 {
-    @apply text-4xl font-bold leading-snug;
+    @apply text-3xl font-bold leading-tight text-[var(--color-moyblue)] pb-2 w-fit;
   }
   .heading-3 {
     @apply text-3xl font-semibold leading-normal;
   }
 
+  .heading-underline {
+    @apply h-1 w-12 bg-yellow-400 mt-2 mb-6;
+  }
+  
+
   /* Subtítulos */
   .subtitle {
-    @apply text-xl font-medium;
-    color: var(--color-moyblue-80);
+    @apply text-lg font-light text-gray-500 mb-3;
   }
 
   /* Párrafos */
-  .body {
-    @apply text-base leading-relaxed;
+  .paragraph {
+    @apply text-sm mt-4 text-gray-600 leading-relaxed text-justify space-y-2;
   }
 
   /* Texto pequeño */

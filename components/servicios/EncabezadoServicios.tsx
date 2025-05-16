@@ -38,10 +38,10 @@ const servicios = [
 export default function EncabezadoServicios() {
   return (
     <section
-      className="bg-cover bg-center bg-no-repeat text-white py-20 px-6"
+      className="bg-cover bg-center lg:h-[750px] bg-no-repeat text-white py-20 px-6"
       style={{ backgroundImage: "url('/images/fondo-servicios.jpg')" }}
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center pb-6">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center items-start pb-6">
         {servicios.map((servicio, i) => (
           <Link
             key={i}
