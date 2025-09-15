@@ -30,7 +30,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`${inter.className} bg-moyblue text-white shadow-lg relative z-50`}
+      className={`${inter.className} bg-moyblue text-white relative z-50`}
       role="navigation"
       aria-label="Menú principal"
     >
