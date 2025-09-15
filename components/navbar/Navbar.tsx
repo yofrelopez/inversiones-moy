@@ -15,12 +15,14 @@ const inter = Inter({ subsets: ['latin'], weight: ['500', '600', '700'] });
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+
+
   const closeMenu = () => {
     setMenuOpen(false);
-    setOpenSubmenu(null);
+    setOpenDropdown(null); // cierra dropdown móvil
   };
 
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
