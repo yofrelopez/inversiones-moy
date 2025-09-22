@@ -87,7 +87,7 @@ export default function FeatureCards() {
               {/* “Flash” blanco */}
               <div
                 className="pointer-events-none absolute inset-0 -z-10 bg-white opacity-0
-                           transition-opacity duration-150 ease-out group-hover:opacity-40
+                           transition-opacity duration-150 ease-out group-hover:opacity-20
                            group-hover:duration-0 group-hover:delay-0"
               />
               {/* Capa oscura para legibilidad */}
