@@ -1,0 +1,15 @@
+@font-face{
+  font-family:'Transportation';
+  src:url('/assets/transportation/fonts/Transportation.woff') format('woff'),
+      url('/assets/transportation/fonts/Transportation.ttf') format('truetype');
+  font-weight:normal; font-style:normal; font-display:block;
+}
+
+[data-ico-transportation]::before{
+  content: attr(data-ico-transportation);
+  font-family:'Transportation' !important;
+  display:inline-block;
+  line-height:1;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}

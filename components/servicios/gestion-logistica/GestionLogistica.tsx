@@ -1,5 +1,7 @@
 "use client";
 
+import TransportationProbe from "../../dev/TransportationProbe";
+import TruckingProbe from "../../dev/TruckingProbe";
 import Clients from "./Clients";
 import ContactSection from "./ContactSection";
 import Hero from "./Hero";
@@ -17,6 +19,7 @@ export default function GestionLogistica() {
             <ContactSection />
             <ValueProposition />
             <Clients />
+
 
         </div>
     );

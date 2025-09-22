@@ -16,6 +16,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
+      <head>
+       <link rel="stylesheet" href="/assets/trucking/css/trucking-icons.css" />
+        <link rel="stylesheet" href="/assets/transportation/css/transportation-icons.css" />
+        <link rel="stylesheet" href="/assets/stroke7/css/pe-icon-7-stroke.css" />
+        <link rel="stylesheet" href="/assets/stroke7/css/helper.css" />
+      </head>
       <body>
         <Navbar />
         <main className="min-h-screen">{children}</main>

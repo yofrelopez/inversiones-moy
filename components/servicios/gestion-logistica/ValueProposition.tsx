@@ -18,7 +18,7 @@ export default function ValueProposition() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Card desplazado hacia la derecha dejando aire a la izquierda */}
         <div className="bg-white rounded-xl shadow-2xl md:grid md:grid-cols-5 gap-8 items-center
-                        p-6 md:p-10 lg:p-12
+                        p-6 md:p-10 lg:p-12 lg:px-[150px]
                         md:ml-12 lg:ml-16
                         min-h-[420px] lg:min-h-[480px]">
 

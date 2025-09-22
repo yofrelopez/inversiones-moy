@@ -1,64 +1,65 @@
 "use client";
 
 import Image from "next/image";
-import {
-  ClipboardList, // 01
-  FileCog,       // 02
-  Truck,         // 03
-  Eye,           // 04
-  Send,          // 05
-  ShieldCheck,   // 06
-} from "lucide-react";
+import React from "react";
 
 type Step = {
   number: string;
   title: string;
+  set: "transportation" | "trucking";
   description: string;
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  iconCode?: string; // codepoint de la fuente Trucking (ej: "\ue900")
+  codeHex?: string;  // código hexadecimal alternativo (ej: "f142")
 };
 
 const steps: Step[] = [
   {
     number: "01",
+    set: "trucking",
     title: "Planificación Estratégica",
     description:
       "Diseñamos rutas y planes de distribución personalizados para reducir costos y asegurar puntualidad en cada envío.",
-    icon: ClipboardList,
+    iconCode: "\ue90c",
   },
   {
     number: "02",
+    set: "trucking",
     title: "Gestión y Control",
     description:
       "Supervisamos todo el flujo logístico: desde la solicitud de pedidos hasta la liquidación, garantizando transparencia y eficiencia.",
-    icon: FileCog,
+    iconCode: "\ue90f",
   },
   {
     number: "03",
+    set: "trucking",
     title: "Transporte Especializado",
     description:
       "Flota propia para traslados locales y nacionales, desde almacenes generales hasta tiendas, sucursales o clientes finales.",
-    icon: Truck,
+    iconCode: "\ue910",
   },
   {
     number: "04",
+    set: "trucking",
     title: "Visibilidad y Seguimiento",
     description:
       "Monitoreo en tiempo real mediante GPS con reportes actualizados para un control total de sus mercancías.",
-    icon: Eye,
+    iconCode: "\ue908",
   },
   {
     number: "05",
+    set: "transportation",
     title: "Entregas Eficientes",
     description:
       "Procesos optimizados que garantizan entregas puntuales y seguras en todo el territorio nacional.",
-    icon: Send,
+    codeHex: "f142",
   },
   {
     number: "06",
+    set: "trucking",
     title: "Compromiso con la Calidad",
     description:
       "Respaldo total: seguro de mercancías, protocolos de seguridad y un servicio enfocado en la satisfacción del cliente final.",
-    icon: ShieldCheck,
+    iconCode: "\ue904",
   },
 ];
 
@@ -74,38 +75,53 @@ export default function Process() {
         {/* Columna izquierda + centro: pasos en 2 columnas */}
         <div className="lg:col-span-2">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-            {steps.map(({ number, title, description, icon: Icon }) => (
-              <div key={number} className="flex items-start gap-4">
-                {/* Ícono */}
-                <div className="mt-1 shrink-0">
-                  <Icon className="w-10 h-12 text-gray-600" strokeWidth={1.5} aria-hidden />
-                </div>
+            {steps.map(({ number, title, description, set, iconCode, codeHex }) => {
+              const char =
+                set === "transportation" && codeHex
+                  ? String.fromCharCode(parseInt(codeHex, 16))
+                  : iconCode ?? "";
 
-                {/* Texto */}
-                <div>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-2xl font-medium text-gray-50600">
-                      {number} /
-                    </span>
-                    <h3 className="text-[17px] md:text-2xl font-light text-gray-900">
-                      {title}
-                    </h3>
+              return (
+                <div key={number} className="flex items-start gap-4">
+                  {/* Ícono */}
+                  <div className="mt-1 shrink-0 w-10 h-12 flex items-center justify-center">
+                    {set === "transportation" ? (
+                      <i
+                        className="text-gray-600 text-[44px] leading-none not-italic"
+                        data-ico-transportation={char}
+                        aria-hidden
+                      />
+                    ) : (
+                      <i
+                        className="text-gray-600 text-[44px] leading-none not-italic"
+                        data-ico-trucking={char}
+                        aria-hidden
+                      />
+                    )}
                   </div>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-600">
-                    {description}
-                  </p>
+
+                  {/* Texto */}
+                  <div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-2xl font-medium text-gray-50600">
+                        {number} /
+                      </span>
+                      <h3 className="text-[17px] md:text-2xl font-light text-gray-900">
+                        {title}
+                      </h3>
+                    </div>
+                    <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                      {description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
         {/* Columna derecha: ilustración */}
         <div className="lg:pl-2">
-          {/* Ajusta la ruta según tu carpeta real:
-             - si usas /public/images/... => "/images/services/gestion-logistica/services-proces.jpg"
-             - si usas /public/services/... => "/services/gestion-logistica/services-proces.jpg"
-          */}
           <Image
             src="/images/services/gestion-logistica/services-proces.jpg"
             alt="Ilustración del proceso logístico"
