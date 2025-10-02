@@ -75,7 +75,7 @@ export default function Hero() {
         </p>
         <div className='pt-4'>
           <Link href="/cotiza">
-            <button className="bg-yellow-400 text-[#01219C]
+            <button className="bg-yellow-400 text-moyblue
             font-normal px-10 py-3 rounded cursor-pointer
             shadow hover:bg-yellow-300 transition"
             >
