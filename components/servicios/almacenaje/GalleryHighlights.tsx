@@ -24,7 +24,7 @@ export default function GalleryHighlights() {
     // Full width en lg, sin márgenes ni espacios entre imágenes
     <section className="w-full">
       <div className="w-full px-0 lg:px-0">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-1 sm:gap-0">
           {tiles.map((t) => {
             const transChar =
               t.set === "transportation" && t.codeHex
@@ -53,27 +53,28 @@ export default function GalleryHighlights() {
                 <div
                   className={[
                     "absolute inset-0 flex items-center justify-center text-white",
-                    "opacity-0 group-hover:opacity-100 transition-opacity duration-300",
+                    // Mobile: siempre visible con menor opacidad | Desktop: hover
+                    "opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300",
                     t.accent === "yellow"
-                      ? "bg-yellow-400/85"
-                      : "bg-[var(--color-moyblue)]/85",
+                      ? "bg-yellow-400/60 sm:bg-yellow-400/85"
+                      : "bg-[var(--color-moyblue)]/60 sm:bg-[var(--color-moyblue)]/85",
                   ].join(" ")}
                 >
-                  <div className="flex flex-col items-center gap-3 px-3 text-center">
+                  <div className="flex flex-col items-center gap-2 sm:gap-3 px-3 text-center">
                     {t.set === "transportation" ? (
                       <i
-                        className="not-italic text-[48px] md:text-[56px] leading-none cursor-pointer"
+                        className="not-italic text-[32px] sm:text-[48px] md:text-[56px] leading-none cursor-pointer"
                         data-ico-transportation={transChar}
                         aria-hidden
                       />
                     ) : (
                       <i
-                        className="not-italic text-[48px] md:text-[56px] leading-none cursor-pointer"
+                        className="not-italic text-[32px] sm:text-[48px] md:text-[56px] leading-none cursor-pointer"
                         data-ico-trucking={t.iconCode}
                         aria-hidden
                       />
                     )}
-                    <span className="text-sm sm:text-base font-medium tracking-wide">
+                    <span className="text-xs sm:text-sm md:text-base font-medium tracking-wide">
                       {t.title}
                     </span>
                   </div>

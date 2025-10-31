@@ -16,9 +16,10 @@ export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Detectar si estamos en el home
+  const isHome = pathname === '/';
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
-
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -27,24 +28,27 @@ export default function Navbar() {
 
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
-
   return (
     <nav
-      className={`${inter.className} bg-moyblue text-white relative z-50`}
+      className={`${inter.className} ${
+        isHome 
+          ? 'bg-transparent absolute top-0 left-0 right-0' 
+          : 'bg-moyblue relative'
+      } text-white z-50`}
       role="navigation"
       aria-label="Menú principal"
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" aria-label="Inicio">
-          <div className="relative h-[100px] w-[120px] md:h-[140px] lg:h-[140px] lg:w-[192px]">
+          <div className="relative h-[60px] w-[170px] md:h-[70px] lg:h-[70px] lg:w-[199px]">
             <Image
               src="/logo-moy.png"
               alt="Logo Inversiones Moy"
               fill
               className="object-contain"
               priority
-              sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 192px"
+              sizes="(max-width: 768px) 170px, (max-width: 1024px) 199px, 199px"
             />
           </div>
         </Link>
@@ -87,9 +91,10 @@ export default function Navbar() {
       {/* Menú móvil con transición del contenedor */}
           <div
             className={`
-              md:hidden overflow-hidden bg-[#01219C] text-white
+              md:hidden overflow-hidden text-white
               transition-[max-height,opacity] ease-in-out duration-[1200ms]
               ${menuOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0 pointer-events-none"}
+              ${isHome ? 'bg-moyblue/95 backdrop-blur-sm' : 'bg-[#01219C]'}
             `}
           >
             <div className="px-6 pb-6 space-y-2">
