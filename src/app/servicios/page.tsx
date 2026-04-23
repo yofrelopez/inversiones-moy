@@ -36,14 +36,10 @@ export default function Page() {
 
             <PorqueNosotros /> 
 
-            
-            
-
-            <ContactoCliente />
             <MasServicios_1 />
             <MasServicios_2 />
 
-  
+            <ContactoCliente />
         </>
     )
 }

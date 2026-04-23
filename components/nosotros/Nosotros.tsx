@@ -1,22 +1,28 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "motion/react";
 
 export default function Nosotros() {
   return (
     <section className="max-w-5xl mx-auto px-6 py-16 space-y-20">
 
-        {/* Quienes Somos */}
-        <div className="flex flex-col lg:flex-row gap-10 items-start">
-        
+      {/* Quienes Somos */}
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-col lg:flex-row gap-10 items-start"
+      >
         <div className="w-full lg:w-1/2">
           <h2 className="heading-2">Quiénes Somos</h2>
           <div className="heading-underline" />
           <p className="subtitle">Compromiso y seguridad</p>
           <p className="paragraph">
-
             Somos un equipo profesional que se esmera en atender las necesidades de nuestros exigentes clientes, tanto corporativos como particulares, satisfaciendo al rubro logístico, de distribución y transporte profesional.
             <br /><br />
             Nuestro personal está apoyado con equipos de alta tecnología, aplicativos en tiempo real, comunicaciones, sistema de rastreo, seguimiento y seguridad de su mercadería. Además, ponemos a disposición de nuestros clientes, una moderna y amplia flota de camiones propios con diversas capacidades.
-
           </p>
         </div>
 
@@ -25,22 +31,26 @@ export default function Nosotros() {
             src="/images/nosotros_0.png"
             alt="Quienes Somos"
             fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover rounded"
           />
         </div>
-
-
-      </div>
-
-
+      </motion.div>
 
       {/* Historia */}
-      <div className="flex flex-col lg:flex-row gap-10 items-start">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-col lg:flex-row gap-10 items-start"
+      >
         <div className="relative w-full lg:w-1/2 h-[400px]">
           <Image
             src="/images/nosotros_1.jpg"
             alt="Historia"
             fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover rounded"
           />
         </div>
@@ -54,10 +64,16 @@ export default function Nosotros() {
             La experiencia, unido a la filosofía oriental de Calidad Total, ha hecho que nuestra compañía tenga la confianza de empresas líderes de nuestro país, lo que afianza nuestro crecimiento y constante superación.
           </p>
         </div>
-      </div>
+      </motion.div>
 
       {/* Visión */}
-      <div className="flex flex-col-reverse lg:flex-row gap-10 items-start">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-col-reverse lg:flex-row gap-10 items-start"
+      >
         <div className="w-full lg:w-1/2">
           <h2 className="heading-2">Visión</h2>
           <div className="heading-underline" />
@@ -73,18 +89,26 @@ export default function Nosotros() {
             src="/images/servicios_5.png"
             alt="Visión"
             fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover rounded"
           />
         </div>
-      </div>
+      </motion.div>
 
       {/* Misión */}
-      <div className="flex flex-col lg:flex-row gap-10 items-start">
-      <div className="relative w-full lg:w-1/2 h-[400px]">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-col lg:flex-row gap-10 items-start"
+      >
+        <div className="relative w-full lg:w-1/2 h-[400px]">
           <Image
             src="/images/nosotros_2.jpg"
             alt="Misión"
             fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover rounded"
           />
         </div>
@@ -98,7 +122,8 @@ export default function Nosotros() {
             Nos comprometemos a brindar soluciones integrales adaptadas a cada necesidad, respaldados por tecnología de vanguardia, procesos optimizados y un equipo humano altamente calificado.
           </p>
         </div>
-      </div>
+      </motion.div>
+
     </section>
   );
 }

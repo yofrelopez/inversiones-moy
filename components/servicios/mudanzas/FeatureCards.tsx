@@ -3,6 +3,7 @@
 
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 type Card = {
   title: string;
@@ -48,10 +49,31 @@ const cards: Card[] = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 export default function FeatureCards() {
   return (
     <section className="w-full py-14">
-      <div className="mx-auto max-w-7xl px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <motion.div 
+        className="mx-auto max-w-7xl px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {cards.map((c) => {
           const truckingChar = c.iconSet === "trucking" ? c.icon : undefined;
           const transChar =
@@ -60,13 +82,14 @@ export default function FeatureCards() {
               : undefined;
 
           return (
-            <a
+            <motion.a
+              variants={cardVariants}
               key={c.title}
               href={c.href}
               aria-label={c.title}
               className="group relative isolate overflow-hidden rounded-md bg-gray-100 px-10 pt-16 pb-10
                          border-b border-gray-300/60 shadow-sm cursor-pointer focus:outline-none
-                         focus-visible:ring-2 focus-visible:ring-yellow-400/90"
+                         focus-visible:ring-2 focus-visible:ring-yellow-400/90 flex flex-col"
             >
             {/* Imagen + overlay (reemplaza lo anterior) */}
             <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -133,17 +156,17 @@ export default function FeatureCards() {
                 {c.title}
               </h3>
               <p className="mt-3 text-center text-[15px] leading-relaxed text-gray-600
-                            group-hover:text-white/90 transition-colors">
+                            group-hover:text-white/90 transition-colors flex-grow">
                 {c.text}
               </p>
 
               {/* Línea inferior fina */}
               <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gray-300/80
                               group-hover:bg-white/60 transition-colors" />
-            </a>
+            </motion.a>
           );
         })}
-      </div>
+      </motion.div>
     </section>
   );
 }

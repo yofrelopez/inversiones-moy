@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'motion/react';
 import { FaFacebookF, FaWhatsapp, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 
@@ -40,6 +41,7 @@ export default function Hero() {
             src={src}
             alt={`Fondo ${index + 1}`}
             fill
+            sizes="100vw"
             className={`object-cover absolute transition-opacity duration-1000 ease-in-out ${
               index === currentIndex ? 'opacity-100 z-0' : 'opacity-0'
             }`}
@@ -53,6 +55,7 @@ export default function Hero() {
         src="/images/overlay.png"
         alt=""
         fill
+        sizes="100vw"
         className="object-cover opacity-50"
         priority
       />
@@ -63,7 +66,12 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-moyblue via-moyblue-40 to-moyblue-40 z-0" />
 
       {/* Contenido centrado */}
-      <div className="relative z-10 text-center px-6 text-white max-w-2xl mt-[20px]">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        className="relative z-10 text-center px-6 text-white max-w-2xl mt-[20px]"
+      >
         <p className="text-sm text-yellow-400 font-semibold mb-4 tracking-wider">
           TRASLADA TUS ENSERES CON
         </p>
@@ -100,7 +108,7 @@ export default function Hero() {
           </Link>
         </div>
         
-      </div>
+      </motion.div>
 
       {/* Curva inferior decorativa */}
       <svg

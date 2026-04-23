@@ -1,15 +1,32 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
 
 export default function MasServicios_1() {
   return (
     <section className="max-w-7xl mx-auto px-6 pt-16 space-y-20">
       {/* Fila 1: Mudanza de residencias */}
-      <div className="flex flex-col lg:flex-row gap-10 items-center">
+      <motion.div 
+        id="mudanzas"
+        className="flex flex-col lg:flex-row gap-10 items-center"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div className="relative w-full lg:w-1/2 h-[420px]">
           <Image
             src="/images/servicios_3.jpg"
             alt="Mudanza de residencias"
             fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover rounded"
           />
         </div>
@@ -24,11 +41,22 @@ export default function MasServicios_1() {
             <br /><br />
             Contamos con sistemas de embalaje, carretas inteligentes, funda acolchonadas para proteger muebles, protector de ascensores, jabas plásticas, roperos portátiles, rastreo GPS, equipos para maniobras en pisos altos y furgones de todas las capacidades.
           </p>
+          <div className="mt-6">
+            <Link href="/servicios/mudanzas" className="inline-block px-6 py-2 border-2 border-[#01219C] text-[#01219C] font-semibold rounded hover:bg-[#01219C] hover:text-white transition-colors">
+              Ver Detalles
+            </Link>
+          </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Fila 2: Mudanza corporativa + Gestión logística */}
-      <div className="flex flex-col lg:flex-row gap-10">
+      <motion.div 
+        className="flex flex-col lg:flex-row gap-10"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {/* Columna izquierda: textos */}
         <div className="w-full lg:w-1/2 space-y-12">
           {/* Mudanza corporativa */}
@@ -42,10 +70,15 @@ export default function MasServicios_1() {
               de cada servicio y sus fechas límite. Garantizamos la calidad de nuestro servicio
               y el riguroso cuidado de su patrimonio.
             </p>
+            <div className="mt-6">
+              <Link href="/servicios/mudanzas" className="inline-block px-6 py-2 border-2 border-[#01219C] text-[#01219C] font-semibold rounded hover:bg-[#01219C] hover:text-white transition-colors">
+                Ver Detalles
+              </Link>
+            </div>
           </div>
 
           {/* Gestión logística */}
-          <div>
+          <div id="gestion-logistica">
             <h2 className="text-3xl font-semibold text-[#01219C]">Gestión logística</h2>
             <div className="w-12 h-1 bg-yellow-400 my-2" />
             <p className="text-sm text-gray-500 mb-3">Reconocidas empresas confían en nosotros</p>
@@ -69,6 +102,11 @@ export default function MasServicios_1() {
               <li>Seguimiento de Mercancías en Tiempo Real (GPS)</li>
               <li>Sistema de trazabilidad y seguimiento</li>
             </ul>
+            <div className="mt-6">
+              <Link href="/servicios/gestion-logistica" className="inline-block px-6 py-2 border-2 border-[#01219C] text-[#01219C] font-semibold rounded hover:bg-[#01219C] hover:text-white transition-colors">
+                Ver Detalles
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -79,6 +117,7 @@ export default function MasServicios_1() {
               src="/images/servicios_4.jpg"
               alt="Mudanza corporativa"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover rounded"
             />
           </div>
@@ -87,11 +126,12 @@ export default function MasServicios_1() {
               src="/images/servicios_5.png"
               alt="Gestión logística"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover rounded"
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
