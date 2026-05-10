@@ -2,10 +2,17 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
+import HeroService from "../servicios/layout/Hero";
 
 export default function Nosotros() {
   return (
-    <section className="max-w-5xl mx-auto px-6 py-16 space-y-20">
+    <>
+      <HeroService
+        title="Sobre Nosotros"
+        subtitle="Más de 25 años brindando soluciones logísticas integrales en todo el Perú. Conoce nuestra historia y compromiso."
+        image="/images/hero-nosotros.jpg"
+      />
+      <section className="max-w-5xl mx-auto px-6 py-16 space-y-20">
 
       {/* Quienes Somos */}
       <motion.div 
@@ -125,5 +132,6 @@ export default function Nosotros() {
       </motion.div>
 
     </section>
+    </>
   );
 }

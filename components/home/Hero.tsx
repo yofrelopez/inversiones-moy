@@ -57,7 +57,6 @@ export default function Hero() {
         fill
         sizes="100vw"
         className="object-cover opacity-50"
-        priority
       />
 
 
