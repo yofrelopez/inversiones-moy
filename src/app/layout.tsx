@@ -1,9 +1,17 @@
 // app/layout.tsx
 import './globals.css'
 import type { Metadata, Viewport } from 'next'
+import { Nunito_Sans } from 'next/font/google'
 
 import Navbar from '../../components/navbar/Navbar'
 import Footer from '../../components/Footer'
+
+const nunito = Nunito_Sans({
+  subsets: ['latin'],
+  weight: ['400', '600', '700', '800'],
+  display: 'swap',
+  variable: '--font-nunito',
+})
 
 
 
@@ -91,7 +99,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es">
+    <html lang="es" className={nunito.variable}>
         <head>
         <link rel="stylesheet" href="/assets/trucking/css/trucking-icons.css" />
         <link rel="stylesheet" href="/assets/stroke7/css/pe-icon-7-stroke.css" />

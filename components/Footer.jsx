@@ -78,10 +78,8 @@ export default function Footer() {
 
           <h4 className="mt-6 text-lg font-semibold">Cotice su traslado</h4>
           <div className="h-[2px] w-10 bg-yellow-400 my-2 mx-auto lg:mx-0" />
-          <Link href="/cotiza">
-            <button className="cursor-pointer mt-2 px-6 py-2 border border-white text-white rounded-full hover:bg-white hover:text-black transition">
-              Solicita cotización
-            </button>
+          <Link href="/cotiza" className="inline-block mt-2 px-6 py-2 border border-white text-white rounded-full hover:bg-white hover:text-black transition">
+            Solicita cotización
           </Link>
         </div>
       </div>

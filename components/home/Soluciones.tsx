@@ -39,16 +39,16 @@ export default function Soluciones() {
         className="flex flex-wrap justify-center gap-16 ax-w-5xl mx-auto mb-12 pt-4 pb-4"
       >
         {[
-          { icon: <HiOutlineCube strokeWidth={1} className="text-[36px]" />, label: "Mudanza Local" },
-          { icon: <HiOutlineTruck strokeWidth={1} className="text-[36px]" />, label: "Gestión logística" },
-          { icon: <HiOutlineClipboardList strokeWidth={1} className="text-[36px]" />, label: "Almacenaje" },
-          { icon: <TbTruckDelivery strokeWidth={1} className="text-[36px]" />, label: "Renting" },
-          { icon: <TbSnowflake strokeWidth={1} className="text-[36px]" />, label: "Transporte en frío" },
-          { icon: <TbAlertTriangle strokeWidth={1} className="text-[36px]" />, label: "Productos peligrosos" },
-        ].map(({ icon, label }, i) => (
+          { icon: <HiOutlineCube strokeWidth={1} className="text-[36px]" />, label: "Mudanza Local", slug: "mudanzas" },
+          { icon: <HiOutlineTruck strokeWidth={1} className="text-[36px]" />, label: "Gestión logística", slug: "gestion-logistica" },
+          { icon: <HiOutlineClipboardList strokeWidth={1} className="text-[36px]" />, label: "Almacenaje", slug: "almacenaje" },
+          { icon: <TbTruckDelivery strokeWidth={1} className="text-[36px]" />, label: "Renting", slug: "renting" },
+          { icon: <TbSnowflake strokeWidth={1} className="text-[36px]" />, label: "Transporte en frío", slug: "transporte-frio" },
+          { icon: <TbAlertTriangle strokeWidth={1} className="text-[36px]" />, label: "Productos peligrosos", slug: "productos-peligrosos" },
+        ].map(({ icon, label, slug }, i) => (
           <Link
             key={i}
-            href="/servicios"
+            href={`/servicios/${slug}`}
             className="flex flex-col items-center gap-2 cursor-pointer hover:text-yellow-400 transition-colors transform hover:scale-105 duration-300"
           >
             {icon}
