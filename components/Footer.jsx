@@ -23,22 +23,22 @@ export default function Footer() {
           <h3 className="mt-6 text-lg font-semibold">Redes Sociales</h3>
           <div className="h-[2px] w-10 bg-yellow-400 my-2 mx-auto lg:mx-0" />
           <div className="flex justify-center lg:justify-start gap-4 mt-4 text-2xl">
-            <Link href="https://facebook.com" target="_blank">
+            <Link href="https://facebook.com" target="_blank" aria-label="Facebook">
               <div className="p-2 border border-white rounded-full hover:text-yellow-400 hover:border-yellow-400 transition">
                 <FaFacebookF />
               </div>
             </Link>
-            <Link href="https://wa.me/51999999999" target="_blank">
+            <Link href="https://wa.me/51999999999" target="_blank" aria-label="WhatsApp">
               <div className="p-2 border border-white rounded-full hover:text-yellow-400 hover:border-yellow-400 transition">
                 <FaWhatsapp />
               </div>
             </Link>
-            <Link href="https://youtube.com" target="_blank">
+            <Link href="https://youtube.com" target="_blank" aria-label="YouTube">
               <div className="p-2 border border-white rounded-full hover:text-yellow-400 hover:border-yellow-400 transition">
                 <FaYoutube />
               </div>
             </Link>
-            <Link href="https://instagram.com" target="_blank">
+            <Link href="https://instagram.com" target="_blank" aria-label="Instagram">
               <div className="p-2 border border-white rounded-full hover:text-yellow-400 hover:border-yellow-400 transition">
                 <FaInstagram />
               </div>

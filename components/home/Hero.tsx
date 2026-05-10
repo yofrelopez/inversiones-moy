@@ -68,7 +68,7 @@ export default function Hero() {
       <motion.div 
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        transition={{ duration: 0.4, ease: "easeOut", delay: 0 }}
         className="relative z-10 text-center px-6 text-white max-w-2xl mt-[20px]"
       >
         <p className="text-sm text-yellow-400 font-semibold mb-4 tracking-wider">
