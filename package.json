@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "lucide-react": "^0.544.0",
+    "mapbox-gl": "^3.23.1",
     "motion": "^12.38.0",
     "next": "^16.2.4",
     "react": "^19.0.0",
