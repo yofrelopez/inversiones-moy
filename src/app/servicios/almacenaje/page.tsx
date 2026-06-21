@@ -7,6 +7,9 @@ import PricingAlmacenaje from "../../../../components/servicios/almacenaje/Prici
 export const metadata: Metadata = {
   title: 'Almacenaje y Depósito - Bodegaje Seguro para Empresas',
   description: 'Servicios de almacenaje y depósito con instalaciones seguras y modernas. Bodegaje temporal y permanente para empresas, control de inventario, manejo especializado de mercancías. Tarifas competitivas.',
+  alternates: {
+    canonical: '/servicios/almacenaje',
+  },
   keywords: [
     'almacenaje lima',
     'deposito mercancia',

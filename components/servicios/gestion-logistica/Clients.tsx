@@ -16,6 +16,7 @@ interface ClientsProps {
   logos?: ClientLogo[];
   className?: string;
   hoverColor?: boolean;
+  bgClass?: string;
 }
 
 const defaultLogos: ClientLogo[] = [
@@ -71,12 +72,14 @@ const Clients: React.FC<ClientsProps> = ({
   logos = defaultLogos,
   className = "",
   hoverColor = true,
+  bgClass = "bg-gray-50",
 }) => {
   // Duplicamos el array para que el efecto visual infinito no tenga saltos
   const marqueeLogos = [...logos, ...logos];
+  const gradientClass = bgClass === "bg-white" ? "from-white" : "from-gray-50";
 
   return (
-    <section className={`w-full bg-gray-50 py-16 md:py-24 overflow-hidden ${className}`}>
+    <section className={`w-full ${bgClass} py-16 md:py-24 overflow-hidden ${className}`}>
       <div className="mx-auto max-w-7xl px-6 mb-12">
         <div className="text-center">
           <h2 className="heading-2 mx-auto text-center">{title}</h2>
@@ -87,8 +90,8 @@ const Clients: React.FC<ClientsProps> = ({
 
       <div className="relative w-full flex items-center py-4">
         {/* Gradientes laterales para difuminar la entrada/salida de logos */}
-        <div className="absolute left-0 top-0 z-10 h-full w-12 md:w-32 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none" />
-        <div className="absolute right-0 top-0 z-10 h-full w-12 md:w-32 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none" />
+        <div className={`absolute left-0 top-0 z-10 h-full w-12 md:w-32 bg-gradient-to-r ${gradientClass} to-transparent pointer-events-none`} />
+        <div className={`absolute right-0 top-0 z-10 h-full w-12 md:w-32 bg-gradient-to-l ${gradientClass} to-transparent pointer-events-none`} />
 
         {/* Carrusel animado */}
         <motion.div

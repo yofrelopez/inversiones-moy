@@ -9,6 +9,9 @@ import PorqueNosotros from "../../../components/servicios/PorqueNosotros"
 export const metadata: Metadata = {
   title: 'Servicios Logísticos - Mudanzas, Almacenaje y Transporte',
   description: 'Descubre nuestros servicios logísticos especializados: mudanzas residenciales y corporativas, almacenaje seguro, renting de vehículos, transporte en cadena de frío y materiales peligrosos. Soluciones integrales para empresas.',
+  alternates: {
+    canonical: '/servicios',
+  },
   keywords: [
     'servicios logisticos completos',
     'mudanzas empresariales',

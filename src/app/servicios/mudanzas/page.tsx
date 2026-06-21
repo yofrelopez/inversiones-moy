@@ -8,6 +8,9 @@ import Newsletter from "../../../../components/servicios/mudanzas/Newsletter";
 export const metadata: Metadata = {
   title: 'Mudanzas Residenciales y Corporativas - Servicio Profesional',
   description: 'Servicio profesional de mudanzas en Lima y todo Perú. Mudanzas residenciales, corporativas y comerciales con equipo especializado, embalaje seguro y transporte protegido. Cotización gratuita.',
+  alternates: {
+    canonical: '/servicios/mudanzas',
+  },
   keywords: [
     'mudanzas lima',
     'mudanzas residenciales',

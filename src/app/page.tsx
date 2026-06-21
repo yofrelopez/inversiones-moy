@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
 import Hero from "../../components/home/Hero";
 import Soluciones from "../../components/home/Soluciones";
+import Pasos from "../../components/home/Pasos";
+import Clients from "../../components/servicios/gestion-logistica/Clients";
 
 export const metadata: Metadata = {
   title: 'Inicio - Servicios Logísticos Profesionales',
@@ -26,6 +28,8 @@ export default function HomePage() {
     <>
       <Hero />
       <Soluciones />
+      <Pasos />
+      <Clients bgClass="bg-white" />
     </>
   );
 }

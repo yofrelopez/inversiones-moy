@@ -6,6 +6,9 @@ import GalleryHighlights from "../../../../components/servicios/almacenaje/Galle
 export const metadata: Metadata = {
   title: 'Transporte de Materiales Peligrosos - Certificado y Seguro',
   description: 'Transporte especializado y certificado de materiales peligrosos (MATPEL). Operadores capacitados, vehículos autorizados y cumplimiento normativo. Máxima seguridad en transporte de químicos y sustancias peligrosas.',
+  alternates: {
+    canonical: '/servicios/productos-peligrosos',
+  },
   keywords: [
     'transporte materiales peligrosos',
     'matpel peru',

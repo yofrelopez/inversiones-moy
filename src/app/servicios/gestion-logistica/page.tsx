@@ -4,6 +4,9 @@ import GestionLogistica from "../../../../components/servicios/gestion-logistica
 export const metadata: Metadata = {
   title: 'Gestión Logística Integral - Optimización de Cadena de Suministro',
   description: 'Servicios de gestión logística integral para optimizar tu cadena de suministro. Consultoría logística, planificación de rutas, gestión de inventarios y mejora de procesos. Aumenta la eficiencia operativa.',
+  alternates: {
+    canonical: '/servicios/gestion-logistica',
+  },
   keywords: [
     'gestion logistica',
     'cadena suministro',

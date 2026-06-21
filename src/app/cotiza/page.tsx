@@ -3,6 +3,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Cotización Gratuita - Servicios Logísticos Personalizados',
   description: 'Solicita tu cotización gratuita para servicios logísticos. Mudanzas, almacenaje, renting vehicular y transporte especializado. Presupuesto sin compromiso en 24 horas.',
+  alternates: {
+    canonical: '/cotiza',
+  },
   keywords: [
     'cotizacion servicios logisticos',
     'presupuesto mudanzas',

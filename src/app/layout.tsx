@@ -18,6 +18,9 @@ const nunito = Nunito_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://inversiones-moy-web.vercel.app'), // Cambiar por tu dominio real
+  alternates: {
+    canonical: './',
+  },
   title: {
     default: 'Inversiones Moy - Soluciones Logísticas Profesionales en Perú',
     template: '%s | Inversiones Moy'
@@ -107,6 +110,53 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Inversiones Moy",
+              "image": "https://inversiones-moy-web.vercel.app/images/og-image.jpg",
+              "@id": "https://inversiones-moy-web.vercel.app/#organization",
+              "url": "https://inversiones-moy-web.vercel.app",
+              "telephone": "+51012872434",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Calle 6, Mz K, Sub lote 1A, Villa El Salvador",
+                "addressLocality": "Lima",
+                "addressRegion": "Lima",
+                "postalCode": "15067",
+                "addressCountry": "PE"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -12.222,
+                "longitude": -76.924
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday"
+                ],
+                "opens": "09:00",
+                "closes": "18:00"
+              },
+              "sameAs": [
+                "https://www.facebook.com/InversionesMoy"
+              ],
+              "areaServed": {
+                "@type": "Country",
+                "name": "Peru"
+              }
+            })
+          }}
+        />
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

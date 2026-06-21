@@ -6,6 +6,9 @@ import GalleryHighlights from "../../../../components/servicios/almacenaje/Galle
 export const metadata: Metadata = {
   title: 'Transporte en Cadena de Frío - Productos Refrigerados',
   description: 'Transporte especializado en cadena de frío para productos perecederos, farmacéuticos y alimentos. Vehículos refrigerados con control de temperatura certificado. Garantizamos la calidad de tus productos.',
+  alternates: {
+    canonical: '/servicios/transporte-frio',
+  },
   keywords: [
     'transporte cadena frio',
     'transporte refrigerado',

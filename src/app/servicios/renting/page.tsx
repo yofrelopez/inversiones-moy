@@ -7,6 +7,9 @@ import GalleryHighlights from "../../../../components/servicios/almacenaje/Galle
 export const metadata: Metadata = {
   title: 'Renting de Vehículos - Alquiler de Camiones y Transporte',
   description: 'Servicio de renting vehicular para empresas. Alquiler de camiones, furgones y vehículos de transporte con mantenimiento incluido. Flotas modernas y confiables para operaciones logísticas.',
+  alternates: {
+    canonical: '/servicios/renting',
+  },
   keywords: [
     'renting vehicular',
     'alquiler camiones',
